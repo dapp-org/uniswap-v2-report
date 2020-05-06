@@ -1,5 +1,5 @@
 #+TITLE: Uniswap V2 Audit Report
-#+DATE:
+#+DATE: 06.05.2020
 #+AUTHOR: dapp.org
 #+EMAIL: fv@dapp.org.uk
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
@@ -120,6 +120,10 @@ implementation and formal verification of multi collateral Dai.
 - Lev Livnev
 - Lorenzo Manacorda
 - Martin Lundfall
+
+** Changelog
+
+A revision history for this document can be found [[https://github.com/dapp-org/uniswap-v2-report/commits/master][here]].
 
 * Findings
 
@@ -613,9 +617,9 @@ block those methods, until =skim= is called to siphon off the excess balances.
 This limits the functionality of the contract for tokens where a balance in
 excess of \( 2^{112} \) may be realistically achieved.
 
-For a normal 18 digit token, ~uint112(-1)~ represents a balance of
-19,807,040,628,566,084,398,385,987,584 ($1.9 \times 10^{19}$ or 19
-octillion), well in excess of the total supply of any mainstream token.
+For a normal 18 digit token, ~uint112(-1)~ represents a balance of $5.2 \times
+10^{15}$ (~5 quadrillion) well in excess of the total supply of any mainstream
+token.
 
 This limit could however become problematic should a token with a very large
 number of decimals be used within a =UniswapV2Pair=. The audit team is unaware

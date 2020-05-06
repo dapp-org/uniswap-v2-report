@@ -6,11 +6,10 @@
 
 (setq org-html-preamble-format
       '(("en"
-         "<h1 class=\"title\">%t</h1>
-          <p class=\"subtitle\"><i>%a</i></p>
-          <p class=\"subtitle\">%e</p>
-          <p class=\"subtitle\">%d </p><br></br>
-          <p class=\"subtitle\">STRICTLY CONFIDENTIAL</p>")))
+	 "<h1 class=\"title\">%t</h1>
+	  <p class=\"subtitle\"><i>%a</i></p>
+	  <p class=\"subtitle\">%e</p>
+	  <p class=\"subtitle\">last updated: %d </p><br></br>")))
 
 (defun tangle (source mode)
   (interactive "sFile to tangle: \nsMode to tangle: ")
